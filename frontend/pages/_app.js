@@ -7,8 +7,10 @@ class MyApp extends App {
         const { Component } = this.props
         return (
                 <div>
-                    <p>Hey I'm on every page</p>
-                    <Component />
+                    <Page>
+                        <p>Hey I'm on every page</p>
+                        <Component />
+                    </Page>
                 </div>
         )
     }
