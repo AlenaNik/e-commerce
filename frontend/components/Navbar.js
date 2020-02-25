@@ -2,7 +2,6 @@ const Navbar = () => {
     return (
         <>
             navigation top
-
         </>
     )
 }
