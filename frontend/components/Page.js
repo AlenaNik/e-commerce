@@ -1,7 +1,16 @@
 import React, { Component } from 'react'
 import { Header } from './Header'
 import { Meta } from './Meta'
-import styled from 'styled-components'
+import styled, { ThemeProvider, injectGlobal } from 'styled-components'
+
+const theme = {
+    red: '#e30052',
+    brown: '#67010E',
+    black: '#000',
+    lightgrey: '#e1e1e1',
+    offWhite: '#ededed',
+    maxWidth: '1000px',
+}
 
 const MyButton = styled.button`
   -webkit-appearance: button;
@@ -29,17 +38,28 @@ const MyButton = styled.button`
 
 `;
 
+const StyledPage = styled.div`
+    background-color: #fff;
+    color: #000;
+`
+
+const Inner = styled.div`
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+`
 
 class Page extends Component {
     render() {
         return (
-            <div>
-                <Meta/>
-                <Header/>
-                <MyButton>Click me</MyButton>
-                <p>This is the page component</p>
-                    {this.props.children}
-            </div>
+            <ThemeProvider theme={theme}>
+                <StyledPage>
+                    <Meta/>
+                    <Header/>
+                    <MyButton>Click me</MyButton>
+                    <Inner>{this.props.children}</Inner>
+                </StyledPage>
+            </ThemeProvider>
         )
     }
 }
