@@ -1,8 +1,10 @@
+import Link from 'next/link'
+
 const Sell = () => {
     return (
-        <>
-            Coming from sell
-        </>
+       <div>
+           Sell
+       </div>
     )
 }
 
